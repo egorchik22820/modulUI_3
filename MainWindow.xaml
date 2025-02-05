@@ -9,9 +9,11 @@
     <Grid>
         <Canvas>
             <TextBox x:Name="t1" Text="some text" TextChanged="t1_TextChanged" FontSize="{Binding ElementName=slider1, Path=Value}" />
-            <TextBox x:Name="t2" IsReadOnly="True" FontSize="{Binding ElementName=t1, Path=FontSize}" Text="{Binding ElementName=t1, Path=Text}" HorizontalAlignment="Center" Canvas.Top="61" VerticalAlignment="Top" />
+            <TextBox x:Name="t2" FontSize="{Binding ElementName=slider2, Path=Value}" Text="{Binding ElementName=t1, Path=Text, Mode=OneWay}" HorizontalAlignment="Center" Canvas.Top="61" VerticalAlignment="Top" />
             <TextBox Name="s1" Canvas.Top="113" HorizontalAlignment="Center" VerticalAlignment="Top" Width="71" />
             <Slider x:Name="slider1" Minimum="15" Maximum="30" Canvas.Top="166" Width="790" Value="{Binding ElementName=s1, Path=Text}"/>
-            <Slider x:Name="slider2" Minimum="15" Maximum="30" IsEnabled="False" Value="{Binding ElementName=slider1, Path=Value}" Canvas.Top="217" Width="790" />        </Canvas>
+            <Slider x:Name="slider2" Minimum="15" Maximum="30" Value="{Binding ElementName=slider1, Path=Value, Mode=OneWay}" Canvas.Top="217" Width="790" />
+        </Canvas>
+
     </Grid>
 </Window>
